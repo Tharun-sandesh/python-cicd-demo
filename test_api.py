@@ -8,7 +8,7 @@ client = TestClient(app)
 def test_home():
     response = client.get("/")
     assert response.status_code == 200
-    assert response.json()["message"] == "Calculator API is running!"
+    assert response.json()["message"] == "Calculator API is running successfully with CI/CD!"
 
 
 def test_add():
@@ -39,6 +39,13 @@ def test_divide_by_zero():
     response = client.get("/divide?a=10&b=0")
     assert response.status_code == 400
     assert response.json()["detail"] == "Cannot divide by zero"
+
+
+def test_square():
+    response = client.get("/square?number=5")
+
+    assert response.status_code == 200
+    assert response.json()["result"] == 25
 
 
 def test_invalid_input():

@@ -28,6 +28,10 @@ def multiplication(a: float, b: float):
     return {"result": multiply(a, b)}
 
 
+@app.get("/square")
+def square(number: float):
+    return {"result": number * number}
+
 @app.get("/divide")
 def division(a: float, b: float):
     try:
