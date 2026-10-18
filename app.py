@@ -8,7 +8,7 @@ app = FastAPI(title="Python CI/CD Calculator API")
 @app.get("/")
 def home():
     return {
-        "message": "Calculator API is running!",
+        "message": "Calculator API is running successfully with CI/CD!",
         "docs": "/docs"
     }
 
